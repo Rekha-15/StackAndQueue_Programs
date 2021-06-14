@@ -6,6 +6,7 @@ package com;
  * @param <T>
  */
 
+
 public class StackList <T> {
 	
 int size;
@@ -27,6 +28,7 @@ int size;
 		top = newNode;
 	}
 	
+	
 	/**
 	 * Show method uses to display the elements
 	 *using while condition to check next node is null or not
@@ -43,5 +45,45 @@ int size;
 		}
 		System.out.println(currNode.data);
 	}	
+	
+	/**
+	 * @author rekha
+	 * it peek or Retrieves the element, but it don't remove element
+	 * @param <T>
+	 */
+	
+	public T peek() {
+		final Node<T> f = top;
+		return (f == null) ? null : f.data;
+	}
+	
+	/**
+	 * Pops or removes the elements
+	 * Prints stack is empty if all the stack is empty
+	 *if not , it retrieves top element and removes it and continous still the stack the is empty
+	 * @param <T>
+	 */
+	
+	public void pop() {
+		
+		if(isEmpty()) {
+			
+			System.out.println("Stack is empty");
+			System.exit(0);
+		}
+		top=top.next;
+		size--;
+	}
+	
+	/**
+	 * checks weather stack is empty or not
+	 * @return boolean
+	 */
+	
+	public boolean isEmpty() {
+		
+		return size ==0;
+	}
+	
 	
 }
