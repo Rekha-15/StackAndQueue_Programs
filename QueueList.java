@@ -1,5 +1,7 @@
 package com;
 
+import java.util.NoSuchElementException;
+
 /**
  * @author rekha
  * StackList is a class of public type
@@ -34,6 +36,26 @@ public class QueueList <T> {
 				currNode = currNode.next;
 			}
 			currNode.next = newNode;
+		}
+	}
+	
+	/**
+	 * Removes the elements
+	 * @throws NoSuchElementException if the queue is empty 
+	 *if not , it retrieves top element and removes it and continous still the stack the is empty
+	 * @param <T>
+	 */
+	
+	public Node<T> dequeue() {
+		final Node<T> f = top;
+		if (f == null) {
+			throw new NoSuchElementException();
+		}
+		else {
+		Node<T> removedItem = top;
+		Node<T> newHead = top.next;
+		top = newHead;
+		return removedItem;
 		}
 	}
 	
